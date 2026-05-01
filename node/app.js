@@ -38,7 +38,12 @@ const corsOptions = {
   }
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+
+app.use(cors({
+  origin: true, // allow all origins dynamically
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

@@ -17,6 +17,7 @@ exports.getContactDetails = tryCatch(async (req, res) => {
 exports.createOrUpdateContactDetails = tryCatch(async (req, res) => {
     const body = req.body;
     const logo = req.file;
+    
 
     const updateData = {};
     if (body.primaryContact !== undefined) updateData.primaryContact = body.primaryContact;

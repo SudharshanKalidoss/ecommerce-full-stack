@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const socialProfileSchema = Joi.object({
   platform: Joi.string().required(),
-  url: Joi.string().uri().required(),
+  url: Joi.string().required(),
 });
 
 exports.contactUpdateSchema = Joi.object({

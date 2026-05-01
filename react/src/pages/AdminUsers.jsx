@@ -31,6 +31,13 @@ export default function AdminUsers() {
   const itemsPerPage = 10;
   const adminLoggedIn = isAdminUser(user);
   const pageStartIndex = (currentPage - 1) * itemsPerPage;
+  const hasSearch = search.trim().length > 0 || appliedSearch.length > 0;
+
+  const clearSearch = () => {
+    setSearch("");
+    setAppliedSearch("");
+    setCurrentPage(1);
+  };
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -105,6 +112,14 @@ export default function AdminUsers() {
               className="rounded-xl bg-fuchsia-600 px-4 py-2 text-sm font-semibold text-white hover:bg-fuchsia-500"
             >
               Search
+            </button>
+            <button
+              type="button"
+              onClick={clearSearch}
+              disabled={!hasSearch}
+              className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              Clear
             </button>
           </form>
         </div>

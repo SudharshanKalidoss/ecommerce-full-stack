@@ -74,19 +74,9 @@ export default function Login() {
           </div>
 
           <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/95 p-7 shadow-lg shadow-slate-200/40">
-            <div className="mb-7 flex items-center gap-3">
-              <div className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-rose-500 text-white shadow-lg shadow-rose-200/40">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-6 w-6">
-                  <path d="M12 5v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  <path d="M8 9h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  <path d="M6 13h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                  <path d="M9 17h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Secure login</p>
-                <p className="mt-1 text-sm text-slate-600">Your account is protected so you can shop with confidence.</p>
-              </div>
+            <div className="mb-7 text-center">
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-500 sm:text-sm sm:tracking-[0.32em]">Secure login</p>
+              <p className="mt-1 text-sm text-slate-600">Your account is protected so you can shop with confidence.</p>
             </div>
 
             {errors.general && (
