@@ -9,12 +9,12 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
-<AuthProvider>
-  <CartProvider>
-    <App />
-    <Toaster />
-  </CartProvider>
-</AuthProvider>
+      <AuthProvider>
+        <CartProvider>
+          <App />
+          <Toaster />
+        </CartProvider>
+      </AuthProvider>
   </StrictMode>
 
 )

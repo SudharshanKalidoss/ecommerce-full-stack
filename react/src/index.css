@@ -18,7 +18,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -33,19 +33,17 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+:root.dark {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 }
 
 body {
@@ -53,6 +51,58 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
+}
+
+:root.dark body {
+  background: #0f1117;
+}
+
+:root.dark .bg-white,
+:root.dark .bg-white\/95 {
+  background-color: rgb(15 23 42 / 0.95) !important;
+}
+
+:root.dark .bg-slate-50,
+:root.dark .bg-slate-100 {
+  background-color: rgb(30 41 59) !important;
+}
+
+:root.dark .text-slate-950,
+:root.dark .text-slate-900 {
+  color: rgb(248 250 252) !important;
+}
+
+:root.dark .text-slate-700,
+:root.dark .text-slate-800,
+:root.dark .text-slate-600,
+:root.dark .text-slate-500,
+:root.dark .text-slate-400 {
+  color: rgb(203 213 225) !important;
+}
+
+:root.dark .border-slate-200,
+:root.dark .border-slate-200\/70 {
+  border-color: rgb(71 85 105 / 0.7) !important;
+}
+
+:root.dark .hover\:bg-slate-50:hover,
+:root.dark .hover\:bg-fuchsia-50:hover,
+:root.dark .hover\:bg-rose-50:hover {
+  background-color: rgb(51 65 85) !important;
+}
+
+:root.dark .prose,
+:root.dark .prose p,
+:root.dark .prose li,
+:root.dark .prose span,
+:root.dark .prose strong,
+:root.dark .prose em,
+:root.dark .prose blockquote {
+  color: rgb(226 232 240) !important;
+}
+
+:root.dark .prose a {
+  color: rgb(216 180 254) !important;
 }
 
 #root {
