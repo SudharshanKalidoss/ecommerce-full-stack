@@ -6,9 +6,11 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { PasswordInput } from "../components/ui/password-input";
 import { Header } from "../components/Header";
+import { useToast } from "../hooks/use-toast";
 
 export default function Register() {
   const { isLoggedIn } = useAuth();
+  const { toast } = useToast();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     firstName: "",
@@ -50,10 +52,18 @@ export default function Register() {
         phoneNumber: form.phone.trim(),
         password: form.password,
       });
-      alert("Registration successful. Please sign in.");
+      toast({
+        variant: "success",
+        title: "Registration successful",
+        description: "Your account has been created. Please sign in.",
+      });
       navigate("/login");
     } catch (error) {
-      setErrors({ general: error.message || "Registration failed. Try again." });
+      toast({
+        variant: "destructive",
+        title: "Registration failed",
+        description: error.message || "Please try again.",
+      });
     } finally {
       setLoading(false);
     }
@@ -77,12 +87,6 @@ export default function Register() {
         </div>
 
         <div className="mt-8 rounded-[1.5rem] border border-slate-200 bg-slate-50/95 p-7 shadow-lg shadow-slate-200/40">
-          {errors.general && (
-            <div className="rounded-3xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-700">
-              {errors.general}
-            </div>
-          )}
-
           <form onSubmit={handleSubmit} className="space-y-5">
             <Input
               label="First name"

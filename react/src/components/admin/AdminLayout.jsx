@@ -105,12 +105,6 @@ export function AdminLayout({ user, onLogout, children }) {
             >
               Contact
             </Link>
-            <button type="button" className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-50">
-              Categories
-            </button>
-            <button type="button" className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-slate-50">
-              Orders
-            </button>
           </nav>
           <div className="mt-auto border-t border-slate-200 pt-3">
             <Button

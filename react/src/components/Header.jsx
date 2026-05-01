@@ -232,7 +232,7 @@ export function Header({ showCategories = true }) {
 
           <div className="hidden items-center gap-2 rounded-full border border-fuchsia-200 bg-fuchsia-50 px-4 py-2 text-sm font-semibold text-fuchsia-700 sm:flex">
             <span className="rounded-full bg-fuchsia-600 px-2 py-1 text-white">Special</span>
-            Special discount for return gifts
+            Special discounts on latest fashion
           </div>
 
           <div className="flex items-center gap-2">

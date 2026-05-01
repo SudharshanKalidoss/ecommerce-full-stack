@@ -5,6 +5,7 @@ export const authApi = {
     const response = await apiClient.post("/auth/login", { email, password });
     const payload = response.data;
 
+
     if (payload?.status !== "SUCCESS" || !payload?.data?.accessToken) {
       throw new Error(payload?.message || "Login failed. Please try again.");
     }
@@ -21,6 +22,7 @@ export const authApi = {
       password,
     });
     const payload = response.data;
+    console.log(payload , "dsadsadsadsadssad");
 
     if (payload?.status && payload.status !== "SUCCESS") {
       throw new Error(payload?.message || "Registration failed. Try again.");
