@@ -5,6 +5,7 @@ import { productApi } from "../lib/product-api";
 import { useCart } from "../context/CartContext";
 import { useToast } from "../hooks/use-toast";
 import { ConfirmDialog } from "../components/ui/confirm-dialog";
+import { AppImage } from "../components/ui/app-image";
 
 const decodeHtml = (html) => {
   if (!html) return "";
@@ -132,7 +133,7 @@ export default function ProductDetails() {
             <div className="grid gap-8 lg:grid-cols-2">
               <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                 {product.thumbnail ? (
-                  <img
+                  <AppImage
                     src={product.thumbnail}
                     alt={product.title}
                     className="h-full w-full object-cover"
@@ -158,7 +159,10 @@ export default function ProductDetails() {
                 </div>
 
                 {product.shortDescription ? (
-                  <p className="mt-4 text-sm leading-6 text-slate-600">{product.shortDescription}</p>
+                  <div
+                    className="prose prose-sm mt-4 max-w-none text-slate-600"
+                    dangerouslySetInnerHTML={{ __html: String(product.shortDescription) }}
+                  />
                 ) : null}
 
                 {Array.isArray(product.variants) && product.variants.length > 0 ? (

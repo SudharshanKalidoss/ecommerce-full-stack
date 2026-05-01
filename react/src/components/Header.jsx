@@ -8,6 +8,7 @@ import { useAuth } from "../context/AuthContext";
 import { useCart } from "../context/CartContext";
 import { useToast } from "../hooks/use-toast";
 import { ConfirmDialog } from "./ui/confirm-dialog";
+import { AppImage } from "./ui/app-image";
 
 const getProductImage = (product) => {
   if (!product) return "";
@@ -214,7 +215,7 @@ export function Header({ showCategories = true }) {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link to="/" className="inline-flex items-center gap-3">
             {headerLogo ? (
-              <img
+              <AppImage
                 src={headerLogo}
                 alt="Irishtaylor logo"
                 className="h-12 w-12 rounded-3xl border border-slate-200 object-cover shadow-lg shadow-fuchsia-200/30"
@@ -322,7 +323,7 @@ export function Header({ showCategories = true }) {
                       }}
                     >
                       {getProductImage(product) ? (
-                        <img
+                        <AppImage
                           src={getProductImage(product)}
                           alt={product.title}
                           className="h-12 w-12 flex-shrink-0 rounded-lg border border-slate-200 object-cover"
@@ -427,7 +428,7 @@ export function Header({ showCategories = true }) {
                       <div key={item.id} className="rounded-2xl border border-slate-200 p-3">
                         <div className="flex items-center gap-3">
                         {getProductImage(item.product) ? (
-                          <img
+                          <AppImage
                             src={getProductImage(item.product)}
                             alt={item.product?.title || "Product"}
                             className="h-16 w-16 rounded-xl border border-slate-200 object-cover"

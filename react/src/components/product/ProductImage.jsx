@@ -1,8 +1,10 @@
+import { AppImage } from "../ui/app-image";
+
 export function ProductImage({ title, thumbnail }) {
   if (thumbnail) {
     return (
       <div className="relative w-full bg-slate-100 rounded-2xl h-64 flex items-center justify-center overflow-hidden">
-        <img
+        <AppImage
           src={thumbnail}
           alt={title}
           loading="lazy"

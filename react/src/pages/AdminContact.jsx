@@ -6,6 +6,7 @@ import { adminContactApi } from "../lib/admin-contact-api";
 import { Input } from "../components/ui/input";
 import { SocialPlatformIcon } from "../components/ui/social-platform-icon";
 import { useToast } from "../hooks/use-toast";
+import { AppImage } from "../components/ui/app-image";
 
 const isAdminUser = (user) => String(user?.role || "").toUpperCase() === "ADMIN";
 const SOCIAL_PLATFORMS = ["facebook", "instagram", "twitter", "youtube", "linkedin"];
@@ -200,7 +201,7 @@ export default function AdminContact() {
               <label className="text-sm font-medium text-slate-900">Logo</label>
               <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center">
                 {logoPreview ? (
-                  <img
+                  <AppImage
                     src={logoPreview}
                     alt="Contact logo preview"
                     className="h-16 w-16 rounded-xl border border-slate-200 object-cover"

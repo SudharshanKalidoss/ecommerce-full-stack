@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { contactApi } from "../lib/contact-api";
 import { SocialPlatformIcon } from "../components/ui/social-platform-icon";
+import { AppImage } from "../components/ui/app-image";
 
 export default function Contact() {
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,7 @@ export default function Contact() {
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3">
                 {contact?.logo ? (
-                  <img src={contact.logo} alt="Brand logo" className="h-16 w-16 rounded-xl object-cover" />
+                  <AppImage src={contact.logo} alt="Brand logo" className="h-16 w-16 rounded-xl object-cover" />
                 ) : (
                   <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white text-sm font-semibold text-slate-500">
                     LOGO

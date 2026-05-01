@@ -5,6 +5,7 @@ import { AdminLayout } from "../components/admin/AdminLayout";
 import { adminProductsApi } from "../lib/admin-products-api";
 import { useToast } from "../hooks/use-toast";
 import { ConfirmDialog } from "../components/ui/confirm-dialog";
+import { AppImage } from "../components/ui/app-image";
 
 const isAdminUser = (user) => String(user?.role || "").toUpperCase() === "ADMIN";
 
@@ -190,7 +191,7 @@ export default function AdminProducts() {
                     <td className="px-3 py-3 text-slate-700">{pageStartIndex + index + 1}</td>
                     <td className="px-3 py-3">
                       {product.thumbnail ? (
-                        <img
+                        <AppImage
                           src={product.thumbnail}
                           alt={product.title}
                           className="h-12 w-12 rounded-lg border border-slate-200 object-cover"

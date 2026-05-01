@@ -26,6 +26,7 @@ const corsOptions = {
       "http://localhost:3000",
       "http://localhost:3007",
       "http://localhost:5173",
+      "https://ecommerce-full-stack-woad.vercel.app/"
 
       
     ];

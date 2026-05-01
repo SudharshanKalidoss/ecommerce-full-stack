@@ -1,3 +1,5 @@
+import { AppImage } from "../../ui/app-image";
+
 export function ProductImageUpload({ thumbnailPreview, onFileChange }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
@@ -5,7 +7,7 @@ export function ProductImageUpload({ thumbnailPreview, onFileChange }) {
       <div className="mt-3 flex items-center gap-4">
         <div className="h-20 w-20 overflow-hidden rounded-xl border border-slate-200 bg-white">
           {thumbnailPreview ? (
-            <img src={thumbnailPreview} alt="Thumbnail preview" className="h-full w-full object-cover" />
+            <AppImage src={thumbnailPreview} alt="Thumbnail preview" className="h-full w-full object-cover" />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-xs text-slate-400">No image</div>
           )}
