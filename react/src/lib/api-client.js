@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://ecommerce-full-stack-production.up.railway.app/api";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://ecommerce-full-stack-s04n.onrender.com/api";
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,
